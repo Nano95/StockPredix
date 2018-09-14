@@ -49,12 +49,15 @@ print(y)
 X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size = 0.2)
 
 # lets train now
+# Instantiate our Lin Reg model and fit it with training data
 classifier = LinearRegression()
 classifier.fit(X_train, y_train)
 
+# Test the accuracy by scoring it with our testing data.
 confidence = classifier.score(X_test, y_test)
 print('Confidence: ', confidence)
 
+# Now we can predict the values.
 frcst_pred = classifier.predict(X_test)
 print(frcst_pred)
 
